@@ -1,0 +1,16 @@
+class Solution {
+    public int[] getConcatenation(int[] nums) {
+        ArrayList<Integer> list = new ArrayList<>(4);
+        ArrayList<Integer> list2 = new ArrayList<>(10);
+        
+        int n = nums.length;
+        for (int j = 0; j < n; j++) {
+            list.add(nums[j]);
+        }
+        for (int i = 0; i < n; i++) {
+            list.add(list.get(i));
+        }
+        int[] arr = list.stream().mapToInt(i -> i).toArray();
+        return arr;
+    }
+}
